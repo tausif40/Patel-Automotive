@@ -1,0 +1,96 @@
+.aboutShowroom-section {
+	background-image: url(../../../../../public/assets/images/background-img.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 800px;
+}
+
+.info {
+	background-color: #274d5aee;
+	position: absolute;
+	height: inherit;
+	padding-top: 1rem;
+	width: 100%;
+}
+
+.image {
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.about-paragraph {
+	text-align: center;
+	color: white;
+	padding-top: 1.5rem;
+	font-weight: 300;
+}
+.about-paragraph h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	text-align: center;
+	color: white;
+}
+
+.about-paragraph p {
+	text-align: center;
+	font-size: 16px;
+	padding: 20px 60px;
+	color: white;
+}
+.carousel-section {
+	margin-top: 1rem !important;
+	border-radius: 6px;
+	background-color: #232323c8;
+	margin: auto;
+	width: 55%;
+	height: 450px;
+	overflow: hidden;
+}
+.slider-img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+	.about-paragraph p {
+		width: 100%;
+		padding: 20px 10px;
+		font-size: 14px;
+	}
+	.carousel-section {
+		width: 90%;
+		height: 400px;
+	}
+}
+@media only screen and (max-width: 768px) and (min-width: 577px) {
+	.about-paragraph p {
+		width: 100%;
+		padding: 20px 10px;
+		font-size: 14px;
+	}
+	.carousel-section {
+		height: 350px;
+	}
+}
+
+@media (max-width: 576px) {
+	.aboutShowroom-section {
+		height: 960px !important;
+	}
+	.about-paragraph p {
+		width: 100%;
+		padding: 20px 10px;
+		font-size: 14px;
+	}
+	.aboutShowroom-section {
+		height: 750px;
+	}
+	.carousel-section {
+		width: 99%;
+		height: 350px;
+		background-color: #232323c8;
+	}
+}

@@ -1,0 +1,80 @@
+.profile-details {
+	background-color: rgb(237, 237, 237);
+	border-radius: 0 0 10px 10px;
+	padding: 10px 20px 0px;
+}
+
+.profile-details div {
+	border-bottom: 1px solid #ccc;
+	padding: 12px 10px;
+}
+.edit-btn {
+	padding: 3px 9px;
+	transition: 0.2s;
+}
+.edit-btn:hover {
+	background-color: rgb(30, 81, 96);
+	border-radius: 50px;
+}
+.showPassword {
+	padding: 0px 8px;
+	background: lightsteelblue;
+	border-radius: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.profileLogOut-btn {
+	background-color: var(--primary-color);
+	font-weight: 400;
+	color: white;
+	padding: 8px 20px;
+	border-radius: 10px;
+	transition: 0.2s ease-out;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.profileEdit-btn:hover,
+.profileLogOut-btn:hover {
+	background-color: var(--primary-color-dark);
+}
+.header h2 {
+	font-size: 2rem;
+}
+.header {
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='650' height='119' preserveAspectRatio='none' viewBox='0 0 650 119'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1035%26quot%3b)' fill='none'%3e%3crect width='650' height='119' x='0' y='0' fill='rgba(39%2c 77%2c 90%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c258.239C48.711%2c255.381%2c93.344%2c235.457%2c135.197%2c210.371C178.179%2c184.608%2c215.509%2c152.527%2c244.529%2c111.673C278.644%2c63.647%2c329.512%2c11.989%2c317.009%2c-45.579C304.385%2c-103.703%2c228.519%2c-119.683%2c185.385%2c-160.637C147.661%2c-196.455%2c130.294%2c-259.445%2c79.577%2c-271.014C28.793%2c-282.598%2c-14.169%2c-233.107%2c-63.861%2c-217.49C-112.266%2c-202.278%2c-166.955%2c-209.882%2c-208.342%2c-180.53C-255.197%2c-147.3%2c-302.548%2c-101.47%2c-308.07%2c-44.294C-313.574%2c12.695%2c-265.597%2c58.738%2c-236.195%2c107.866C-210.085%2c151.492%2c-188.678%2c199.55%2c-145.79%2c226.854C-102.99%2c254.103%2c-50.651%2c261.21%2c0%2c258.239' fill='%23203e49'%3e%3c/path%3e%3cpath d='M650 355.631C699.046 360.822 754.093 372.123 794.482 343.818 834.737 315.60699999999997 833.987 257.063 854.435 212.362 874.9 167.625 915.864 130.12 914.735 80.937 913.569 30.131 886.3969999999999-19.181999999999988 848.345-52.86699999999999 812.1800000000001-84.881 760.715-87.106 713.486-97.215 669.827-106.56 624.687-125.286 582.849-109.696 541.735-94.376 520.3-51.21600000000001 494.601-15.653999999999996 471.075 16.900000000000006 442.199 48.657 439.456 88.72800000000001 436.778 127.853 466.365 159.86 480.071 196.60399999999998 495.103 236.905 492.51800000000003 285.789 523.923 315.18 556.814 345.961 605.202 350.889 650 355.631' fill='%232e5c6b'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1035'%3e%3crect width='650' height='119' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+	color: white;
+	align-items: center;
+	padding: 25px 20px;
+	border-radius: 10px 10px 0 0;
+}
+
+@media (max-width: 1024px) {
+	.header,
+	.profile-details {
+		width: 60%;
+	}
+}
+@media (max-width: 768px) {
+	.header,
+	.profile-details {
+		width: 80%;
+	}
+}
+
+@media (max-width: 576px) {
+	.header,
+	.profile-details {
+		width: 90%;
+	}
+}
+
+@media (max-width: 414px) {
+	.header,
+	.profile-details {
+		width: 100%;
+	}
+	.container {
+		padding-inline: 6px;
+	}
+}

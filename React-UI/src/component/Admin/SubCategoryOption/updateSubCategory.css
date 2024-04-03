@@ -1,0 +1,32 @@
+.UpdateSubCategory-form {
+	border: 1px solid lightgray;
+	border-radius: 6px;
+	padding: 20px 40px;
+}
+
+.UpdateSubCategory-section {
+	border-radius: 5px;
+	font-size: 16px;
+	outline: none;
+	transition: 0.3s;
+}
+
+@media (max-width: 640px) {
+	.UpdateSubCategory-form {
+		padding: 20px;
+	}
+	.UpdateSubCategory-section div {
+		width: 100%;
+	}
+	.UpdateSubCategory-section {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.updateCategoryInput {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.category-input {
+		width: 100%;
+	}
+}

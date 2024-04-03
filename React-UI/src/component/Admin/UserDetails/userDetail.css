@@ -1,0 +1,52 @@
+.user-details {
+	overflow-x: auto;
+}
+.date {
+	min-width: 10rem;
+}
+
+.UserDetailsSearchBar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 20px;
+	position: relative;
+	left: 20px;
+}
+.UserDetailsSearchBar input {
+	border: 2px solid rgb(52, 52, 52);
+	padding: 4px 40px 4px 8px;
+	border-radius: 3px;
+	width: 500px;
+	font-weight: 300;
+	transition: 0.2s;
+}
+.UserDetailsSearchBar input:focus {
+	border-color: var(--secondary-color);
+}
+
+.searchIcon {
+	position: relative;
+	right: 30px;
+}
+
+table th,
+table td {
+	padding: 8px 16px;
+	text-align: center;
+	font-size: 16px;
+	border: 1px solid #838383;
+	border-radius: 5px;
+}
+
+@media (max-width: 640px) {
+	table td {
+		padding: 8px 10px;
+	}
+	.UserDetailsSearchBar input {
+		border: 2px solid rgb(52, 52, 52);
+		padding: 4px 40px 4px 8px;
+		border-radius: 3px;
+		width: 500px;
+	}
+}

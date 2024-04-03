@@ -1,0 +1,35 @@
+.category-input input {
+	width: 100%;
+	padding: 8px 10px;
+
+	border: 1px solid #ccc;
+	background-color: #f8f8f8;
+	border-radius: 5px;
+	outline: none;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.category-image input {
+	cursor: pointer;
+}
+
+.category-form {
+	border: 1px solid lightgray;
+	padding: 20px 40px;
+	border-radius: 6px;
+}
+
+@media (max-width: 640px) {
+	.category-form {
+		padding: 20px;
+	}
+	.category-form div {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.category-input,
+	.adminSubmitBtn {
+		width: 100%;
+	}
+}

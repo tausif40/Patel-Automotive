@@ -1,0 +1,39 @@
+.footer-text {
+	background-color: #143641;
+}
+
+.footer-text p {
+	width: 100%;
+	color: white;
+	font-weight: 100;
+}
+.copyright {
+	font-size: 1.1rem;
+}
+.developer {
+	font-size: 1.2rem;
+}
+.nameLink:hover {
+	text-decoration: underline;
+	color: rgb(149, 149, 233);
+	transition: 0.2s;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) and (min-width: 577px) {
+	.footer-text {
+		flex-direction: column-reverse;
+	}
+	.developer {
+		padding-bottom: 10px;
+	}
+}
+
+@media (max-width: 560px) {
+	.footer-text {
+		flex-direction: column-reverse;
+	}
+	.footer-text p {
+		margin-bottom: 10px;
+	}
+}

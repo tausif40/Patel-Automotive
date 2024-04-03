@@ -1,0 +1,181 @@
+.activeLink {
+	color: var(--secondary-color);
+}
+.nav-option-color {
+	color: white;
+}
+
+.nav-bar {
+	justify-content: space-between;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	padding: 6px 50px;
+	background: #426470;
+	box-shadow: 0px 2px 5px 0px rgba(12, 12, 12, 0.351);
+}
+.nav-option {
+	gap: 3rem;
+	font-weight: 400;
+	font-size: 16px;
+	color: white;
+}
+.nav-option li {
+	padding: 6px 0px;
+}
+.nav-option li:hover {
+	cursor: pointer;
+	color: var(--secondary-color);
+	transition: 0.2s ease-out;
+}
+.login {
+	padding: 6px 20px !important;
+	background-color: var(--secondary-color);
+	border-radius: 20px;
+}
+.login:hover {
+	background-color: white;
+	color: var(--primary-text-color) !important;
+}
+.login:active {
+	background-color: white;
+	border: none;
+	transform: scale(0.96);
+}
+
+@keyframes textShine {
+	0% {
+		background-position: 0% 50%;
+	}
+	100% {
+		background-position: 100% 50%;
+	}
+}
+
+.logo-name h1 {
+	/* padding: 2px 40px; */
+	cursor: pointer;
+	font-size: clamp(1.8rem, 1.5vw, 3rem);
+	font-weight: bold;
+	margin: 0px 10px;
+	background: linear-gradient(
+		to right,
+		#ff6e5e 20%,
+		#aff258 30%,
+		#60ec56 50%,
+		#ffd166 80%
+	);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-fill-color: transparent;
+	background-size: 500% auto;
+	animation: textShine 6s ease-in-out infinite alternate;
+}
+
+.hamburger {
+	display: none;
+	color: #f7c17b;
+	z-index: 2;
+}
+@media (max-width: 1048px) {
+	.nav-bar {
+		padding: 6px 20px;
+	}
+}
+
+@media (max-width: 990px) {
+	.activeLink {
+		color: var(--primary-color);
+	}
+
+	.logo-name h1 {
+		font-size: clamp(1.6rem, 1.5vw, 3rem);
+		font-weight: 600;
+		background: linear-gradient(
+			to right,
+			#ef476f 20%,
+			#dbab3d 30%,
+			#06d6a0 50%,
+			#118ab2 80%,
+			#91b60b 100%
+		);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-fill-color: transparent;
+		background-size: 500% auto;
+		animation: textShine 6s ease-in-out infinite alternate;
+	}
+	.nav-bar {
+		padding: 10px 16px;
+		background: white;
+	}
+	.logo-name img {
+		width: 40px;
+		height: auto;
+	}
+
+	.mobile-menu {
+		display: none;
+	}
+
+	.nav-option {
+		color: var(--secondary-color);
+		flex-direction: column;
+		position: absolute;
+		top: 65px;
+		right: 5px;
+		font-size: 24px;
+		gap: 0rem;
+		background: #f7c17b;
+		color: white;
+		box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.6);
+	}
+	.mobile-menu-page {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100vw;
+		height: 100vh;
+		background: #00000048;
+	}
+	.hamburger-effect {
+		box-shadow: 0px 1px 4px 1px rgba(0, 0, 0, 0.2);
+		padding: 4px;
+		background-color: var(--primary-color);
+		border-radius: 5px;
+	}
+
+	.nav-option li {
+		/* border: 0 0 1px 0 solid white; */
+		padding: 8px 30px 8px 20px;
+		display: inline-block;
+	}
+	.nav-option li:hover {
+		cursor: pointer;
+		background-color: #c6975a;
+		color: var(--primary-color);
+	}
+	#linkStyle {
+		width: 100%;
+		border-bottom: 1px solid white;
+	}
+	.login {
+		text-align: center;
+		padding: 6px 30px !important;
+		background-color: white;
+		border-radius: 20px;
+		margin: 10px 20px;
+		color: var(--primary-text-color) !important;
+	}
+	.login:hover {
+		background-color: var(--primary-color);
+		color: white !important;
+	}
+
+	.hamburger {
+		display: block;
+	}
+}

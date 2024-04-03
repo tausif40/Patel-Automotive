@@ -1,0 +1,28 @@
+.DeleteCategory-form {
+	border: 1px solid rgb(244, 147, 147);
+	width: 100%;
+	padding: 20px 40px;
+	margin-top: 15px;
+	border-radius: 6px;
+	border-radius: 5px;
+	outline: none;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+.selectCategory {
+	margin: 0px 0 0 0;
+}
+
+@media (max-width: 640px) {
+	.DeleteCategory-form {
+		padding: 20px;
+	}
+	.DeleteCategory-section {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.DeleteCategory,
+	.adminSubmitBtn {
+		width: 100%;
+	}
+}

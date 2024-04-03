@@ -1,0 +1,106 @@
+.filter-section {
+	background-color: rgb(223, 223, 223);
+	border-radius: 0 5px 5px 0;
+	overflow: hidden;
+	margin-bottom: 20px;
+	position: sticky;
+	top: 88px;
+	margin-bottom: 60px;
+}
+
+.filter-heading {
+	background-color: var(--primary-color);
+	color: white;
+}
+.allProduct:hover {
+	background-color: var(--secondary-color);
+}
+.allProduct {
+	background-color: #46849f;
+	color: white;
+	text-align: center;
+	width: 250px;
+}
+
+.filter-heading,
+.allProduct,
+.category {
+	padding: 5px 80px 5px 50px;
+	font-size: 20px;
+	border-bottom: 1px solid rgb(144, 144, 144);
+}
+
+.subcategory {
+	background: rgb(205, 232, 231);
+	block-size: 100%;
+	border-bottom: 1px solid rgb(152, 152, 152);
+	font-size: 20px;
+	color: var(--primary-color-dark);
+}
+.subcategory:hover {
+	background: #ecac58a2;
+	color: var(--primary-color-darken);
+}
+.subCategoryName {
+	width: 250px;
+	padding: 5px 0px 0px 80px;
+}
+.category {
+	cursor: pointer;
+	color: var(--primary-color-darken);
+	min-width: 250px;
+	font-weight: 500;
+}
+.category:hover {
+	background: var(--secondary-color);
+}
+.filter-option {
+	cursor: pointer;
+}
+
+.selectedCategory {
+    background-color: gray;
+}
+
+.selectedSubCategory {
+    background-color: gray;
+}
+
+
+@media (max-width: 768px) {
+	.filter-section {
+		width: 220px;
+		border-radius: 0;
+		text-align: center;
+		position: fixed;
+		z-index: 100;
+		top: 122px;
+	}
+	.allProduct {
+		width: 220px;
+	}
+	.subCategoryName {
+		width: 200px;
+		padding: 5px 0px 0px 0px;
+	}
+	.filter-heading {
+		display: none;
+	}
+	.filter-heading,
+	.allProduct,
+	.category {
+		padding: 5px 80px 5px 80px;
+	}
+	.allProduct,
+	.category {
+		padding: 5px 20px;
+		font-size: 18px;
+	}
+	.subcategory {
+		padding: 5px 0px 0px 20px;
+		font-size: 18px;
+	}
+	.category {
+		min-width: 200px;
+	}
+}

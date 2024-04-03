@@ -1,0 +1,132 @@
+.line {
+	width: 35%;
+	height: 0.5px;
+	background-color: #062732;
+}
+
+.product-background {
+	background-color: var(--secondary-color);
+	width: 80%;
+	max-width: 30rem;
+	height: 32rem;
+	position: absolute;
+	/* left: 10%; */
+	z-index: -1;
+	clip-path: polygon(0 0, 60% 12%, 60% 75%, 0% 100%);
+}
+
+.second-product-background {
+	flex-direction: row-reverse;
+	background-color: var(--secondary-color);
+	width: 80%;
+	max-width: 30rem;
+	height: 32rem;
+	position: absolute;
+	/* right: 10%; */
+	z-index: -1;
+	clip-path: polygon(0 0, 60% 12%, 60% 75%, 0% 100%);
+}
+
+.pName {
+	font-size: 1.5rem;
+}
+
+.symbol {
+	color: var(--secondary-color);
+}
+
+.price {
+	color: var(--primary-color);
+}
+
+.price-section {
+	font-weight: 700;
+	font-size: 1.5rem;
+}
+
+.divider {
+	margin-top: 20px !important;
+	margin: auto;
+	width: 80%;
+	height: 1px;
+	background-color: var(--primary-color);
+	display: none;
+}
+
+.View-More-btn {
+	background-color: var(--secondary-color);
+	color: white !important;
+	padding: 12px 28px;
+	font-weight: 600;
+	font-size: 1.5rem;
+	transition: 0.2s ease-out;
+}
+
+.View-More-btn:hover {
+	background-color: var(--primary-color);
+}
+
+@media (max-width: 1224px) {
+	.second-product-background {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) and (min-width: 577px) {
+	.second-product-background {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.second-product-background {
+		display: block;
+		width: 70%;
+		right: 25%;
+	}
+	.second-product-background img {
+		margin-left: 32px;
+	}
+	.product-section {
+		flex-direction: column;
+		padding: 0 0px;
+	}
+	.product-img {
+		width: 400px;
+	}
+	.product-img img {
+		padding: 0 20px;
+	}
+	.product-background {
+		left: 5%;
+	}
+	.product-details {
+		padding: 50px 20px 40px;
+		width: 100%;
+	}
+	.description {
+		margin-top: 1.5rem;
+	}
+	.price-section {
+		font-size: 1.5rem;
+		font-weight: 600;
+	}
+	.divider {
+		display: block;
+	}
+	.View-More-btn {
+		padding: 10px 24px;
+		font-size: 1.3rem;
+	}
+	.price-details {
+		padding-right: 0;
+		flex-direction: row-reverse;
+	}
+	.product-section {
+		margin-top: 64px;
+	}
+	.View-More-btn {
+		margin-top: 40px;
+		margin-bottom: 60px;
+	}
+}

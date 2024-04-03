@@ -1,0 +1,47 @@
+.allProduct-section {
+	margin: 0 auto;
+	width: 100%;
+}
+
+
+@media (max-width: 768px) {
+	.allProduct-container {
+		border: none;
+		padding-right: 0;
+		margin-right: 0;
+		flex: none;
+		flex-direction: column;
+		gap: 0px;
+		padding-top: 80px;
+	}
+	.mobile-filter {
+		display: block;
+		position: fixed;
+		top: 64px;
+		padding: 8px 40px;
+		width: 100%;
+		background: var(--primary-color);
+		font-size: 24px;
+		color: white;
+		font-weight: 400;
+		z-index: 50;
+		border-top: 5px solid var(--secondary-color);
+	}
+	.mobile-filter :focus {
+		background: var(--secondary-color);
+	}
+	.allProduct-section {
+		padding: 40px 10px;
+	}
+	.filter-option {
+		top: 10px;
+	}
+	.filter-background {
+		width: 100vw;
+		height: 100vh;
+		background-color: #1818189c;
+		position: fixed;
+		z-index: 60;
+		top: 122px;
+	}
+}

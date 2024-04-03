@@ -1,0 +1,30 @@
+.UpdateCategory {
+	border: 1px solid lightgray;
+	width: 100%;
+	padding: 20px 40px;
+	margin-top: 15px;
+	border-radius: 6px;
+	border-radius: 5px;
+	outline: none;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+.updateCategoryNameInput {
+	text-decoration: none;
+}
+
+@media (max-width: 640px) {
+	.UpdateCategory {
+		padding: 20px;
+	}
+	.selectCategory-section,
+	.selectCategory-input,
+	.updateCategoryNameInput,
+	.adminSubmitBtn {
+		width: 100%;
+	}
+	.updateCategory-input {
+		flex-direction: column;
+		gap: 40px;
+	}
+}

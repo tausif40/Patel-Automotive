@@ -1,0 +1,31 @@
+.DeleteSubCategory-form {
+	border: 1px solid rgb(237, 137, 137);
+	border-radius: 6px;
+	padding: 20px 40px;
+}
+.DeleteSelectCategory {
+	width: 100%;
+	padding: 8px 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: #f8f8f8;
+	outline: none;
+	margin: 0;
+	transition: 0.3s;
+}
+
+@media (max-width: 640px) {
+	.DeleteSubCategory-form {
+		padding: 20px;
+	}
+	.SelectSubCategory {
+		flex-direction: column;
+		gap: 40px;
+	}
+	.selectCategory-filed,
+	.DeleteSelectCategory,
+	.DeleteSelectCategory-field {
+		width: 100%;
+	}
+}
