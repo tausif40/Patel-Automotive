@@ -3,7 +3,6 @@
 	width: 100%;
 }
 
-
 @media (max-width: 768px) {
 	.allProduct-container {
 		border: none;
@@ -14,20 +13,34 @@
 		gap: 0px;
 		padding-top: 80px;
 	}
-	.mobile-filter {
+	.mobile-filter-option {
 		display: block;
+		width: 100%;
 		position: fixed;
 		top: 64px;
-		padding: 8px 40px;
-		width: 100%;
-		background: var(--primary-color);
-		font-size: 24px;
-		color: white;
 		font-weight: 400;
 		z-index: 50;
+		background: var(--primary-color);
+		font-size: 22px;
 		border-top: 5px solid var(--secondary-color);
+		color: white;
 	}
-	.mobile-filter :focus {
+
+	.mobile-Category-opt {
+		padding: 8px 40px;
+		width: 50%;
+		float: left;
+		border-right: 2px solid var(--secondary-color);
+		cursor: pointer;
+	}
+	.mobile-search-opt {
+		padding: 8px 40px;
+		width: 50%;
+		float: right;
+		border-left: 2px solid var(--secondary-color);
+		cursor: pointer;
+	}
+	.mobile-filter-option :focus {
 		background: var(--secondary-color);
 	}
 	.allProduct-section {
@@ -43,5 +56,28 @@
 		position: fixed;
 		z-index: 60;
 		top: 122px;
+	}
+	.searchWarper {
+		display: none;
+		position: fixed;
+		top: 110px;
+		width: 96%;
+		padding: 0 !important;
+		margin: 0;
+		z-index: 2;
+		height: 80px;
+		background-color: rgb(205, 208, 199);
+	}
+	.ProductSearchIcon {
+		background-color: rgb(165, 169, 173) !important;
+	}
+	.ProductSearchBar {
+		width: 100%;
+	}
+}
+
+@media (max-width: 550px) {
+	.mobile-filter-option {
+		font-size: 16px;
 	}
 }

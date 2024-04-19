@@ -1,8 +1,9 @@
 import React from 'react'
 import './banner.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Banner() {
+	const navigate = useNavigate()
 	return (
 		<>
 			<section className="banner-section flex items-center justify-center h-[98vh] pt-2" id='home'>
@@ -11,7 +12,7 @@ function Banner() {
 						<div className='banner-img'>
 							<img src="/assets/images/banner-erickshaw.png" alt="img" />
 						</div>
-						<button className='mobile-btn shop-button mt-14'>SHOP NOW</button>
+						<button className='mobile-btn shop-button mt-14' onClick={() => { navigate('/allProducts') }}>SHOP NOW</button>
 					</div>
 
 					<div className='banner-text text-white w-3/5 pl-20'>

@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Loader from '../../Loader/loader';
 import { wishlistUrl } from '../../../../app.url';
 import { LuSearch } from "react-icons/lu";
+import { IoIosArrowBack } from "react-icons/io";
 
 function ProductDetails() {
 	const params = useParams()
@@ -156,8 +157,9 @@ function ProductDetails() {
 
 		if (valid) {
 			const pendingToastId = toast.info("Message Sending...", { autoClose: false });
-			emailjs.sendForm('service_6iweohj', 'template_yq85uat', form.current, {
-					publicKey: 'fJNjYfFHkKhzjxsR7',
+			emailjs
+				.sendForm('service_lswskmh', 'template_jkso3fa', form.current, {
+					publicKey: 'CJ1sRLYE-fkywg1Hn',
 				})
 				.then(
 					() => {
@@ -192,23 +194,28 @@ function ProductDetails() {
 	if (isLoading) {
 		return <div className='h-[90vh] pt-40'><Loader /></div>
 	} else if (comingSoon) {
-		return <div className='flex justify-center items-center h-[90vh]'>
-			<img src="/assets/images/coming-soon.jpg" alt="coming soon..." className='size-80 pb-20 object-contain' />
-		</div>
+		return <>
+			<button className='flex items-center absolute mt-10 ml-10 bg-slate-300 py-1 pr-4 pl-2 rounded-[4px]' onClick={() => { navigate(-1) }}><IoIosArrowBack /> &nbsp;back</button>
+			<div className='flex justify-center items-center h-[90vh]'>
+				<img src="/assets/images/coming-soon.jpg" alt="coming soon..." className='size-80 pb-20 object-contain' />
+			</div>
+		</>
 	}
 
 	return (
 		<>
-			<div className="ProductSearchBar mb-10">
-				<input type="search" placeholder="search Products......" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={handleKeyPress} />
-				<span className="ProductSearchIcon" onClick={handleSearch}><LuSearch size={25} /></span>
+			<div className='searchWarper'>
+				<div className="ProductSearchBar mt-5">
+					<input type="search" placeholder="search Products......" value={search} onChange={e => setSearch(e.target.value)} onKeyDown={handleKeyPress} />
+					<div className="ProductSearchIcon" onClick={handleSearch}><LuSearch size={25} /></div>
+				</div>
 			</div>
 			{noProduct && (
 				<div className='flex justify-center pt-10 h-[80vh]'>
 					<img src="/assets/images/no-result.png" alt="no result" className='size-96 pb-20 object-contain' />
 				</div>
 			)}
-			<div className=''>
+			<div className='mt-10'>
 				{
 					product.map((value, index) => (
 						<div className='product'>

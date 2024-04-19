@@ -1,16 +1,21 @@
+.searchWarper {
+	/* position: sticky; */
+	/* top: 80px; */
+	/* z-index: 2; */
+}
+
 .ProductSearchBar {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: relative;
-	left: 14px;
 }
 
 .ProductSearchBar input {
 	border: 3px solid rgb(64, 64, 64);
+	border-right: none;
 	padding: 4px 60px 4px 8px;
 	height: 48px;
-	border-radius: 3px;
+	border-radius: 3px 0 0 3px;
 	font-size: 18px;
 	width: 90%;
 	font-weight: 300;
@@ -18,15 +23,24 @@
 }
 .ProductSearchBar input:focus {
 	border: 3px solid var(--secondary-color);
+	border-right: none;
 }
 
 .ProductSearchIcon {
-	position: relative;
-	right: 50px;
-	background-color: rgb(232, 232, 232);
-	padding: 5px 7px;
-	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 48px;
+	width: 50px;
+	background-color: rgb(225, 232, 235);
+	border: 3px solid rgb(64, 64, 64);
+	border-left: none;
+	border-radius: 0 3px 3px 0;
 	cursor: pointer;
+}
+.ProductSearchBar input:focus + .ProductSearchIcon {
+	border: 3px solid var(--secondary-color);
+	border-left: none;
 }
 
 .product-card {
@@ -175,5 +189,6 @@
 	}
 }
 
-@media (max-width: 476px) {
+@media (max-width: 768px) {
+
 }

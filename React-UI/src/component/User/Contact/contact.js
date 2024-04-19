@@ -52,16 +52,18 @@ function Contact() {
 
 		if (valid) {
 			const pendingToastId = toast.info("Message Sending...", { autoClose: false });
-			emailjs.sendForm('service_6iweohj', 'template_yq85uat', form.current, {
-				publicKey: 'fJNjYfFHkKhzjxsR7',
-			})
-				.then(() => {
-					toast.update(pendingToastId, {
-						render: "Message Sent Successfully",
-						type: "success",
-						autoClose: 800
-					});
-				},
+			emailjs
+				.sendForm('service_lswskmh', 'template_jkso3fa', form.current, {
+					publicKey: 'CJ1sRLYE-fkywg1Hn',
+				})
+				.then(
+					() => {
+						toast.update(pendingToastId, {
+							render: "Message Sent Successfully",
+							type: "success",
+							autoClose: 800
+						});
+					},
 					(error) => {
 						toast.update(pendingToastId, {
 							render: "Message Not Sent",
