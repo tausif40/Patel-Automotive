@@ -19,7 +19,6 @@ function ProductDetails() {
 	const navigate = useNavigate();
 
 	const [ product, setProduct ] = useState([]);
-	const [ allProduct, setAllProduct ] = useState([]);
 	const [ noProduct, setNoProduct ] = useState(false);
 	const [ comingSoon, setComingSoon ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(false);
@@ -129,22 +128,22 @@ function ProductDetails() {
 		}
 	}
 
-	const openGallery = () => {
-	}
-
 	const addToWishlist = (id) => {
+		const toastId = toast.loading("Saving Product...")
 		const token = localStorage.getItem("user_token")
 		if (token === null || token === '') {
 			navigate('/login')
+			toast.update(toastId, { isLoading: false, autoClose: 1, type:"warning" });
+
 		} else {
 			const WishlistItem = { productId: id, user_token: token }
 			axios.post(wishlistUrl + "save", WishlistItem).then((res) => {
-				toast.success('Saved Successfully', { autoClose: 600 });
+				toast.update(toastId, { render: "Saved Successfully", type: "success", isLoading: false, autoClose: 600 });
 			}).catch((err) => {
 				if (err.response.status === 400) {
-					toast.info('Already saved', { autoClose: 400 });
+					toast.update(toastId, { render: "Already saved", type: "info", isLoading: false, autoClose: 400 });
 				} else {
-					toast.error('Add wishlist failed!');
+					toast.update(toastId, { render: "Saving failed !", type: "error", isLoading: false, autoClose: 600 });
 				}
 			})
 		}
@@ -222,8 +221,8 @@ function ProductDetails() {
 							<div className='product-card flex'>
 
 								{/* image section */}
-								<div className='product-image' onClick={openGallery}>
-									<ProductImages images={value.piconnm} />
+								<div className='product-image'>
+									<ProductImages images={value.images} />
 								</div>
 
 								{/* product details section */}
@@ -282,8 +281,9 @@ function ProductDetails() {
 
 									{/* buttons */}
 									<div className='PD-buttons flex gap-10 justify-center'>
-										<button className='wishlist-btn' onClick={() => { addToWishlist(value._id) }}><div className='flex justify-center content-center'><p className='pt-1'></p>&nbsp;Save this</div></button>
-
+										<button className='wishlist-btn' onClick={() => { addToWishlist(value._id) }}>
+											<div className='flex justify-center content-center'><p className='pt-1'></p>&nbsp;Save this</div>
+										</button>
 										<button className='moreDetails-btn' onClick={() => { setPopup(true) }}>More details...</button>
 									</div>
 								</div>
@@ -326,4 +326,4 @@ function ProductDetails() {
 	)
 }
 
-export default ProductDetails
+export default ProductDetails;

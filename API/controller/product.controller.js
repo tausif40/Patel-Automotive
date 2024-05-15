@@ -1,63 +1,33 @@
-import '../models/connection.js';
-import UserSchemaModel from '../models/user.model.js';
-import CategorySchemaModel from '../models/category.model.js';
 import ProductSchemaModel from '../models/product.model.js';
 import url from 'url';
 import moment from 'moment';
-import path from 'path';
-import rs from './randomstring.controller.js';
+import cloudinary from '../utils/cloudinary.js'
 
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
-// export var save = async (req, res, next) => {
-//   var pDetails = req.body
-//   var pList = await ProductSchemaModel.find().sort({ "_id": -1 }).limit(1);
-//   var l = pList.length;
-//   var _id = l == 0 ? 1 : pList[ 0 ]._id + 1;
-
-//   // Check if req.files.piconnm is an array
-//   if (req.files.piconnm && !Array.isArray(req.files.piconnm)) {
-//     req.files.piconnm = [ req.files.piconnm ];
-//   }
-
-//   if (!req.files.piconnm || !Array.isArray(req.files.piconnm)) {
-//     return res.status(400).send('No files were uploaded.');
-//   }
-
-//   var filenames = [];
-
-//   for (let fileobj of req.files.piconnm) {
-//     var filename = Date.now() + "-" + rs + "-" + fileobj.name;
-//     var uploadpath = path.join(__dirname, "../../React-UI/public/assets/images/upload", filename);
-//     await fileobj.mv(uploadpath);
-//     filenames.push(filename);
-//   }
-
-//   pDetails = { ...pDetails, "piconnm": filenames, "_id": _id, "info": Date.now() };
-//   var product = await ProductSchemaModel.create(pDetails);
-//   if (product)
-//     return res.status(201).json({ "result": "Product added successfully...." });
-//   else
-//     return res.status(500).json({ "result": "Server Error" });
-// }
-
-export var save = async (req, res, next) => {
+export var save = async (req, res) => {
   try {
-    var pDetails = req.body
+    // console.log(req);
+    var pDetails = req.body;
+    // console.log(req.body.productName);
     var pList = await ProductSchemaModel.find().sort({ "_id": -1 }).limit(1);
     var l = pList.length;
     var _id = l == 0 ? 1 : pList[ 0 ]._id + 1;
-    var fileobj = req.files.piconnm;
-    var filename = Date.now() + "-" + rs + "-" + fileobj.name;
-    var uploadpath = path.join(__dirname, "../../React-UI/public/assets/images/upload", filename);
-    fileobj.mv(uploadpath);
-    pDetails = { ...pDetails, "piconnm": filename, "_id": _id, "date": moment().format('DD-MM-YYYY'), };
+
+    const patelAutomotiveFolder = `PatelAutomotive/${req.body.productName}`
+    const images = [];
+    for (const file of req.files) {
+      const result = await cloudinary.uploader.upload(file.path, { folder: patelAutomotiveFolder });
+      images.push(result.secure_url);
+    }
+
+    pDetails = { ...pDetails, "images": images, "_id": _id, "date": moment().format('DD-MM-YYYY'), };
     var product = await ProductSchemaModel.create(pDetails);
     if (product)
       return res.status(201).json({ "result": "Product added successfully...." });
     else
       return res.status(500).json({ "result": "Server Error" });
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ "result": "bad request Error" });
   }
 }
@@ -68,15 +38,8 @@ export var updateProduct = async (request, response, next) => {
     const condition = request.body.condition_obj;
     const content = request.body.content_obj;
 
-    // if (!isValidJson(conditionObject) || !isValidJson(contentObject)) {
-    //   return response.status(400).json({ error: "Invalid JSON format in request body" });
-    // }
-
-    // const condition = JSON.parse(conditionObject);
-    // const content = JSON.parse(contentObject);
-
     const productDetails = await ProductSchemaModel.findOne(condition);
-    console.log(productDetails);
+    // console.log(productDetails);
 
     if (!productDetails) {
       return response.status(404).json({ error: "Requested resource not available" });

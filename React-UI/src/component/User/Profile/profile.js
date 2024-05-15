@@ -11,14 +11,14 @@ import "react-toastify/dist/ReactToastify.css";
 function Profile() {
 	const navigate = useNavigate();
 	const [ userData, setUserData ] = useState([]);
-	const [ password, setPassword ] = useState('***************');
+	const [ password, setPassword ] = useState('********');
 	const user_token = localStorage.getItem('user_token');
 
 	useEffect(() => {
 		if (user_token && user_token !== "null") {
 			axios.get(userUrl + "fetch?user_token=" + user_token)
-				.then((response) => { setUserData(response.data) })
-				.catch((error) => { console.log(error) });
+				.then((response) => { setUserData(response.data) 
+				}).catch((error) => { console.log(error) });
 		}
 	}, []);
 
@@ -59,9 +59,9 @@ function Profile() {
 	return (
 		<>
 			<div className="profile pt-32">
-				<div className="container">
+				<div className="">
 					<div className="profile-section flex items-center flex-col">
-						<div className="header flex justify-between w-1/2">
+						<div className="header flex justify-between w-[40%]">
 							<h2>Your Details</h2>
 							<Link to={'/profile/editProfile'} className="">
 								<button className="edit-btn flex "> <CiEdit size={25} /> <span>&nbsp;Edit</span></button>
@@ -69,7 +69,7 @@ function Profile() {
 						</div>
 						{
 							userData.map((data) => (
-								<div className="profile-details w-1/2">
+								<div className="profile-details w-[40%]">
 									<div className="flex">
 										<p className="w-1/2 font-semibold">Name</p>
 										<p>{data.name}</p>

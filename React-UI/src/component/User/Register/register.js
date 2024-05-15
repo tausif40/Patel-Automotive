@@ -14,7 +14,7 @@ function Register() {
 	const navigate = useNavigate();
 
 	const [ name, setName ] = useState("");
-	const [ email, setEmail ] = useState(""); y
+	const [ email, setEmail ] = useState("");
 
 	const [ phone, setPhone ] = useState("");
 	const [ password, setPassword ] = useState("");
@@ -84,8 +84,7 @@ function Register() {
 	const handelRegister = (e) => {
 		e.preventDefault();
 
-		axios
-			.get(userUrl + "/fetch?phone=" + phone)
+		axios.get(userUrl + "fetch?phone=" + phone)
 			.then((res) => {
 				setPhoneNoError("Phone number already exist, Please login");
 			})
@@ -101,8 +100,7 @@ function Register() {
 		const valid = validateForm(userDetails);
 
 		if (valid) {
-			axios
-				.post(userUrl + "/save", userDetails)
+			axios.post(userUrl + "save", userDetails)
 				.then((response) => {
 					if (response.status === 201) {
 						changeStatus(phone)

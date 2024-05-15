@@ -91,7 +91,7 @@ function ProductList(props) {
 										<td>{product.category}</td>
 										<td>{product.subCategory}</td>
 										<td>{product.price.toLocaleString("en-IN")}</td>
-										<td><img src={`/assets/images/upload/${product.piconnm}`} alt="img" className="size-[70px] object-contain" /></td>
+										<td><img src={product.images[ 0 ]} alt="img" className="size-[70px] object-contain" /></td>
 										<td>
 											<Link to={`/admin/product/updateProduct/${product._id}`}>
 												<button className="text-green-700">Update</button>

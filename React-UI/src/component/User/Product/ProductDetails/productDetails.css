@@ -1,7 +1,8 @@
 .searchWarper {
 	/* position: sticky; */
 	/* top: 80px; */
-	/* z-index: 2; */
+	z-index: 20;
+	width: 98%;
 }
 
 .ProductSearchBar {
@@ -140,7 +141,7 @@
 
 @media (max-width: 1024px) {
 	.product-image {
-		min-width: 450px;
+		min-width: 100%;
 	}
 
 	.product-card {
@@ -190,5 +191,4 @@
 }
 
 @media (max-width: 768px) {
-
 }

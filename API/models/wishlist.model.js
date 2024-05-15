@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
 import uniqueValidator from "mongoose-unique-validator";
 
-const wishlistSchema = mongoose.Schema({
+const wishlistSchema = new mongoose.Schema({
 	_id: Number,
 	productId: {
 		type: Number,
 		required: [ true, "productId is required" ],
-		unique: true,
 		trim: true,
 	},
 	user_token: {

@@ -5,7 +5,6 @@ import { userUrl } from "../../../app.url";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Swal from "sweetalert2";
 import { GoEye } from "react-icons/go";
 import { GoEyeClosed } from "react-icons/go";
 
@@ -32,8 +31,7 @@ function Login() {
 		e.preventDefault();
 
 		const loginInfo = { phone: phone, password: password };
-		axios
-			.post(userUrl + "login", loginInfo)
+		axios.post(userUrl + "/login", loginInfo)
 			.then((response) => {
 				const obj = response.data.userDetails;
 

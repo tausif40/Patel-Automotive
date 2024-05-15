@@ -18,7 +18,7 @@ function ProductImages(props) {
 			<Carousel useKeyboardArrows={true}>
 				{images.map((URL, index) => (
 					<div className="slide flex">
-						<img className="slider-image" alt="img" src={`/assets/images/upload/${URL}`} key={index} style={{ backgroundColor: 'gray' }} />
+						<img className="slider-image" alt="img" src={URL} key={index} style={{ backgroundColor: 'gray' }} />
 					</div>
 				))}
 			</Carousel>

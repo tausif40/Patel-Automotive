@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
 
-const ProductSchema = mongoose.Schema({
+const ProductSchema = new mongoose.Schema({
   _id: Number,
   productName: {
     type: String,
@@ -60,7 +60,7 @@ const ProductSchema = mongoose.Schema({
     type: String,
     trim: true,
   },
-  piconnm: {
+  images: {
     type: [ String ],
     required: [ true, "image is required" ],
     trim: true

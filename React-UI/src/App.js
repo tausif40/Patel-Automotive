@@ -39,8 +39,7 @@ function App() {
 			<ScrollToTop />
 			<Navbar />
 			<Routes>
-				<Route
-					path="/"
+				<Route path="/"
 					element={
 						<React.Fragment>
 							<Banner />
@@ -53,8 +52,7 @@ function App() {
 						</React.Fragment>
 					}
 				/>
-				<Route
-					path="/home"
+				<Route path="/home"
 					element={
 						<React.Fragment>
 							<Banner />

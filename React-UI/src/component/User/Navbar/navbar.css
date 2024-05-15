@@ -79,9 +79,21 @@
 	color: #f7c17b;
 	z-index: 2;
 }
-@media (max-width: 1048px) {
+
+@media (max-width: 1190px) {
 	.nav-bar {
 		padding: 6px 20px;
+	}
+}
+@media (max-width: 1130px) {
+	.nav-bar {
+		padding: 6px 10px;
+	}
+	.logo-name h1 {
+		font-size: clamp(1.4rem, 1vw, 3rem);
+	}
+	.nav-option {
+		gap: 2.2rem;
 	}
 }
 

@@ -16,7 +16,7 @@ function Product() {
 			<section className='container pt-14 Highlight-product-section' id='product'>
 				<div className='text-center textColor'>
 					<h1 className='font-semibold'>Our Product</h1>
-					<p>It is a long established fact that a reader will be distracted by the</p>
+					<p>Drive green, drive smart!</p>
 				</div>
 
 				{

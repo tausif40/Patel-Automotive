@@ -59,7 +59,7 @@ function UpdateProduct() {
 				setBatteryType(update.batteryType)
 				setBatteryCapacity(update.batteryCapacity)
 				setMotorType(update.motorType)
-				setImage(update.piconnm[ 0 ])
+				setImage(update.images[ 0 ])
 			})
 			.catch((error) => { console.log(error) });
 	}, [])
@@ -110,10 +110,10 @@ function UpdateProduct() {
 
 		const updateProduct = {
 			condition_obj: { _id: id },
-			content_obj: { productName: productName, price: price, category: catName, subCategory: subCatName, modelName: model, loadingCapacity: loadingCapacity, mileageSeatingCapacity: mileageSeatingCapacity, countryOrigin: countryOrigin, dimension: dimension, chargingTime: chargingTime, batteryType: batteryType, batteryCapacity: batteryCapacity, motorType: motorType, piconnm: [ image ] }
+			content_obj: { productName: productName, price: price, category: catName, subCategory: subCatName, modelName: model, loadingCapacity: loadingCapacity, mileageSeatingCapacity: mileageSeatingCapacity, countryOrigin: countryOrigin, dimension: dimension, chargingTime: chargingTime, batteryType: batteryType, batteryCapacity: batteryCapacity, motorType: motorType, images: [ image ] }
 		};
 
-		console.log(updateProduct);
+		// console.log(updateProduct);
 		const config = {
 			'content-type': 'multipart/form-data'
 		};

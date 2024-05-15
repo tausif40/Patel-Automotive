@@ -44,13 +44,13 @@ function EditProfile() {
 	return (
 		<>
 			<div className="profile pt-32">
-				<div className="container">
+				<div className="">
 					<div className="flex items-center flex-col">
-						<div className="header flex justify-between w-1/2">
+						<div className="header flex justify-between w-[40%]">
 							<h2>Your Details</h2>
 							<button className="save-btn flex" onClick={handelUpdate}> <span>Save</span></button>
 						</div>
-						<div className="profile-details w-1/2">
+						<div className="profile-details w-[40%]">
 							<div className="flex">
 								<p className="w-1/2 font-semibold">Name</p>
 								<input type="text" value={name} onChange={e => { setName(e.target.value) }} />

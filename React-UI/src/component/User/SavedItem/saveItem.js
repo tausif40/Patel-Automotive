@@ -154,7 +154,7 @@ function SavedItem() {
 
 							{/* image section */}
 							<div className='product-image'>
-								<ProductImages images={value.piconnm} />
+								<ProductImages images={value.images} />
 							</div>
 
 							{/* product details section */}

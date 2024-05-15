@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 import uniqueValidator from "mongoose-unique-validator";
 
-const SubCategorySchema = mongoose.Schema({
+const SubCategorySchema = new mongoose.Schema({
 	_id: Number,
 	catnm: {
 		type: String,

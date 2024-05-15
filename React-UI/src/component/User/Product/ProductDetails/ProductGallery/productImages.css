@@ -16,13 +16,15 @@
 }
 .control-arrow {
 	border: none;
+	z-index: 1;
 }
 .thumbs {
 	border: 1px solid rgb(176, 176, 176);
 	height: 80px;
-	overflow: hidden;
-	padding: 2px 10px;
-	object-fit: contain;
+	padding: 0px 5px;
+	/* object-fit: contain; */
+	white-space: wrap !important;
+	/* overflow: scroll; */
 	/* border-radius: 5px; */
 	/* overflow: hidden !important; */
 }

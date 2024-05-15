@@ -1,13 +1,14 @@
 .profile-details {
 	background-color: rgb(237, 237, 237);
 	border-radius: 0 0 10px 10px;
-	padding: 10px 20px 0px;
+	padding: 10px 6px;
 }
 
 .profile-details div {
 	border-bottom: 1px solid #ccc;
-	padding: 12px 10px;
+	padding: 12px 12px;
 }
+
 .edit-btn {
 	padding: 3px 9px;
 	transition: 0.2s;
@@ -22,6 +23,7 @@
 	border-radius: 50px;
 	text-align: center;
 	cursor: pointer;
+	margin-right: 20px;
 }
 
 .profileLogOut-btn {
@@ -58,21 +60,27 @@
 @media (max-width: 768px) {
 	.header,
 	.profile-details {
-		width: 80%;
+		width: 90%;
+	}
+	.showPassword {
+		margin-right: 10px;
 	}
 }
 
 @media (max-width: 576px) {
 	.header,
 	.profile-details {
-		width: 90%;
+		width: 96%;
+	}
+	.showPassword {
+		margin-right: 5px;
 	}
 }
 
 @media (max-width: 414px) {
 	.header,
 	.profile-details {
-		width: 100%;
+		width: 98%;
 	}
 	.container {
 		padding-inline: 6px;

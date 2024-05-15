@@ -51,26 +51,15 @@ function Contact() {
 		const valid = validateForm();
 
 		if (valid) {
-			const pendingToastId = toast.info("Message Sending...", { autoClose: false });
-			emailjs
-				.sendForm('service_lswskmh', 'template_jkso3fa', form.current, {
-					publicKey: 'CJ1sRLYE-fkywg1Hn',
-				})
-				.then(
-					() => {
-						toast.update(pendingToastId, {
-							render: "Message Sent Successfully",
-							type: "success",
-							autoClose: 800
-						});
-					},
-					(error) => {
-						toast.update(pendingToastId, {
-							render: "Message Not Sent",
-							type: "success",
-							autoClose: 800
-						});
-					}
+			const toastId = toast.loading("Message Sending...")
+			emailjs.sendForm('service_lswskmh', 'template_jkso3fa', form.current, {
+				publicKey: 'CJ1sRLYE-fkywg1Hn',
+			})
+				.then(() => {
+					toast.update(toastId, { render: "Message Sent Successfully", type: "success", isLoading: false, autoClose: 600 });
+				}, (error) => {
+					toast.update(toastId, { render: "Message Not Sent", type: "error", isLoading: false, autoClose: 600 });
+				}
 				);
 		}
 	};

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import uniqueValidator from 'mongoose-unique-validator';
 
-const UserSchema = mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   _id: Number,
   name: {
     type: String,

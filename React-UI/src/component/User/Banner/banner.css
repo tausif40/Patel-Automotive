@@ -4,7 +4,7 @@
 	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 110%);
 }
 .banner-img {
-	background-color: white;
+	background-color: rgb(255, 255, 255);
 	border-radius: 62% 38% 43% 57% / 57% 39% 61% 43%;
 }
 .banner-img img {

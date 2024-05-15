@@ -1,9 +1,10 @@
 import express from 'express';
 const router = express.Router();
+import upload from '../middleware/multer.js';
 
 import * as productController from '../controller/product.controller.js';
 
-router.post("/save", productController.save);
+router.post("/save", upload.array('images', 10), productController.save);
 
 router.get("/fetch", productController.fetch);
 

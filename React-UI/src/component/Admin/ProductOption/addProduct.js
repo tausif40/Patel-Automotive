@@ -27,7 +27,7 @@ function AddProduct() {
 	const [ batteryType, setBatteryType ] = useState('');
 	const [ batteryCapacity, setBatteryCapacity ] = useState('');
 	const [ motorType, setMotorType ] = useState('');
-	const [ image, setImage ] = useState();
+	const [ image, setImage ] = useState([]);
 	const [ productAdd, setProductAdd ] = useState(true);
 
 	useEffect(() => {
@@ -50,12 +50,16 @@ function AddProduct() {
 			});
 	};
 
-	const handelFile = (event) => {
-		setImage(event.target.files[ 0 ])
-	}
-	// const handleFiles = (event) => {
-	// 	setImages([ ...event.target.files ]);
+	// const handelFile = (event) => {
+	// 	setImage(event.target.files[ 0 ])
 	// }
+	// const handelFile = (event) => {
+	// 	setImage([ ...event.target.files ]);
+	// }
+	const handelFile = (e) => {
+		const files = Array.from(e.target.files);
+		setImage(files);
+	};
 
 
 	const handleSubmit = (e) => {
@@ -96,20 +100,18 @@ function AddProduct() {
 		formData.append('batteryType', batteryType);
 		formData.append('batteryCapacity', batteryCapacity);
 		formData.append('motorType', motorType);
-		formData.append('piconnm', image);
-		// images.forEach((image, index) => {
-		// 	formData.append(`piconnm${index}`, image);
-		// });
+		// formData.append('images', image);
+		image.forEach((file) => formData.append('images', file));
 
-		console.log(formData);
 		const config = {
 			'content-type': 'multipart/form-data'
 		};
-
+		const toastId = toast.loading("Product is adding, wait...")
 		axios.post(productUrl + 'save', formData, config)
 			.then(response => {
 				console.log(response)
-				toast.success('Product added Successfully', { autoClose: 600 });
+				toast.update(toastId, { render: "Product added Successfully", type: "success", isLoading: false, autoClose: 600 });
+				// toast.success('Product will adding', { autoClose: 600 });
 				setProductAdd(!productAdd);
 				setProductName('');
 				setPrice('');
@@ -126,7 +128,8 @@ function AddProduct() {
 
 			}).catch(error => {
 				console.log(error)
-				toast.error("Product not added, try again.", { autoClose: 600 });
+				toast.update(toastId, { render: "Product not added", type: "error", isLoading: false, autoClose: 600 });
+				// toast.error("Product not added, try again.", { autoClose: 600 });
 			});
 	};
 
@@ -183,23 +186,23 @@ function AddProduct() {
 								</div>
 								<div className="form-field">
 									<label htmlFor="price">Product Price  <span className="required">&nbsp;*</span></label>
-									<input type="number" id="price" value={price} onChange={e => { setPrice(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name1', 'pname')} />
+									<input type="number" id="price" value={price} onChange={e => { setPrice(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'modelName', 'pname')} />
 								</div>
 							</div>
 							<div className="Specification-section py-2">
 								<p className="mb-2 px-4 font-bold">Specification Details :-</p>
 
 								<div className="flex items-center table-input">
-									<label htmlFor="name0">Model Name / Number</label>
-									<input type="text" id="name0" value={model} onChange={e => { setModel(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name1', 'price')} />
+									<label htmlFor="modelName">Model Name / Number</label>
+									<input type="text" id="modelName" value={model} onChange={e => { setModel(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'loadingCapacity', 'price')} />
 								</div>
 								<div className="flex items-center table-input">
-									<label htmlFor="name1">Loading Capacity</label>
-									<input type="text" id="name1" value={loadingCapacity} onChange={e => { setLoadingCapacity(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name2', 'name0')} />
+									<label htmlFor="loadingCapacity">Loading Capacity</label>
+									<input type="text" id="loadingCapacity" value={loadingCapacity} onChange={e => { setLoadingCapacity(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name2', 'modelName')} />
 								</div>
 								<div className="flex items-center table-input">
 									<label htmlFor="name2">Mileage Seating Capacity</label>
-									<input type="text" id="name2" value={mileageSeatingCapacity} onChange={e => { setMileageSeatingCapacity(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name3', 'name1')} />
+									<input type="text" id="name2" value={mileageSeatingCapacity} onChange={e => { setMileageSeatingCapacity(e.target.value) }} onKeyDown={(e) => handleKeyDown(e, 'name3', 'loadingCapacity')} />
 								</div>
 								<div className="flex items-center table-input">
 									<label htmlFor="name3">Country Origin</label>
