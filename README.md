@@ -17,7 +17,7 @@ Uses technologies - HTML, CSS, tailwind CSS, Javascript, React.js, Node.js, expr
 1. **User Registration/Login: -** Allows users to create accounts or log in securely.
 2. **Profile Management: -** Enables users to update their personal information and change passwords.
 3. **Easy Navigation: -** Explore effortlessly with simple clicks to find what you want.
-4. **Save Product Options: -** Save for later and build your Wishlist of future product.
+4. **Save Product Options: -** Save for later and build your Wishlist for future purchases.
 5. **Search Functionality: -** Find what you need in seconds with our search functionality.
 6. **Product Filters: -** Customize your search with additional options, like category and subcategory options.
 7. **Messaging/Support: -** Provides a way for users to contact customer support.
