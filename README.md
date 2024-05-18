@@ -5,10 +5,9 @@
 Uses technologies - HTML, CSS, tailwind CSS, Javascript, React.js, Node.js, express.js, MongoDB
 
 ---
+> **Note:-** This is a live project, I've removed direct database access for security reasons. To view or search products, first login to the Admin panel and add products. (To login to the admin panel, first create an account. After that, go to MongoDB Compass and change the role from 'user' to 'admin)
 
-> **Note:-** If you are downloading the code, please add your 'CLOUDINARY_NAME', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET' in the .env file that is available in the API folder.
-
-> **Note:-** This is a live project, I've removed direct database access. To view or add products, please log into the Admin panel and add products.
+> **Note:-** Please add your 'CLOUDINARY_NAME', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET' in the .env file that is available in the API folder. You will get this by creating an account on the [Cloudinary](https://cloudinary.com/) website.
 ---
 
 ## Feature of the web app
