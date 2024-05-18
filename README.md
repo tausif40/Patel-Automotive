@@ -8,7 +8,7 @@ Uses technologies - HTML, CSS, tailwind CSS, Javascript, React.js, Node.js, expr
 
 > **Note:-** If you are downloading the code, please add your 'CLOUDINARY_NAME', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET' in the .env file that is available in the API folder.
 
-> Please login to the Admin panel and add Product to view product.
+> **Note:-** This is a live project, I've removed direct database access. To view or add products, please log into the Admin panel and add products.
 ---
 
 ## Feature of the web app
