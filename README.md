@@ -1,6 +1,13 @@
-# Visit website - [click here](https://patelautomotive.in)
+## Visit website - [click here](https://patelautomotive.in) or goto [www.patelautomotive.in](http://patelautomotive.in/)
 
-This is a showroom web app. 
+### This is a showroom web app
+
+Uses technologies - HTML, CSS, tailwind CSS, Javascript, React.js, Node.js, express.js, MongoDB
+
+---
+> **Note:-** If you are downloading the code, please add your 'CLOUDINARY_NAME', 'CLOUDINARY_API_KEY', 'CLOUDINARY_API_SECRET' in the .env file that available in the API folder.
+
+---
 ## Feature of the web app
 ### User Panel Features
 1. **User Registration/Login: -** Allows users to create accounts or log in securely.
