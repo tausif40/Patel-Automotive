@@ -19,7 +19,7 @@ import EditProfile from "./component/User/Profile/EditProfile/editProfile";
 import Address from "./component/User/Address/address";
 import BackToTopButton from "./component/User/BackToTop/backToTop";
 import Footer from "./component/User/Footer/footer";
-import PageNotFound from "./component/PageNotFound/pageNotFound";
+import PageNotFound from "./component/User/PageNotFound/pageNotFound";
 
 // admin
 import AdminHome from "./component/Admin/adminHome/adminHome";
@@ -34,6 +34,7 @@ import UpdateSubSubCategory from "./component/Admin/SubCategoryOption/updateSubC
 import UpdateProduct from "./component/Admin/ProductOption/updateProduct";
 
 function App() {
+	
 	return (
 		<>
 			<ScrollToTop />

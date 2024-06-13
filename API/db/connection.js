@@ -3,8 +3,8 @@ mongoose.set('strictQuery', true);
 const connectDB = async () => {
 	try {
 		// local connection
-		const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}/Showroom`)
-		// const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}/PatelAutomotive_db`)
+		// const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}/Showroom`)
+		const connectionInstance = await mongoose.connect(`${process.env.MONGODB_URL}/PatelAutomotive`)
 		console.log('MongoDB connected...');
 		console.log(`HOST : ${connectionInstance.connection.host}\nPORT : ${connectionInstance.connection.port}\n`);
 	} catch (error) {

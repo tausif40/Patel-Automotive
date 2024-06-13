@@ -1,4 +1,3 @@
-// import "../models/connection.js";
 import UserSchemaModel from "../models/user.model.js";
 import CategorySchemaModel from "../models/category.model.js";
 import url from "url";

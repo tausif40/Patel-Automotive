@@ -1,28 +1,29 @@
-// import "../models/connection.js";
 import wishlistSchemaModel from "../models/wishlist.model.js";
 import url from "url";
 
-export var save = async (req, res, next) => {
+export const save = async (req, res, next) => {
 	try {
 		var wishlist = req.body;
-		var existingWishlist = await wishlistSchemaModel.findOne(wishlist);
+		var listCount = await wishlistSchemaModel.find();
+		var existingWishlist = await wishlistSchemaModel.findOne({ productId: wishlist.productId });
 		if (existingWishlist) {
 			return res.status(400).json({ result: "Wishlist already exists" });
 		}
-		var wishlistList = await wishlistSchemaModel.find().sort({ _id: -1 }).limit(1);
-		var l = wishlistList.length;
-		var _id = l == 0 ? 1 : wishlistList[ 0 ]._id + 1;
+
+		var l = listCount.length;
+		var _id = l == 0 ? 1 : listCount[ l - 1 ]._id + 1;
 
 		wishlist = { ...wishlist, _id: _id };
+
 		var cartDetails = await wishlistSchemaModel.create(wishlist);
 		if (cartDetails)
 			return res.status(201).json({ result: "wishlist added successfully...." });
 		else return res.status(500).json({ result: "Server Error" });
-	} catch(error) {
-		return res.status(500).json({ "result": error });
+	} catch (error) {
+		console.error('Error saving wishlist item:', error);
+		res.status(500).json({ error: 'Server Error' });
 	}
 };
-
 
 export var deleteItem = async (request, response, next) => {
 	var condition_object = request.body;

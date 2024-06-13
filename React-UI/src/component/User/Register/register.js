@@ -9,7 +9,6 @@ import Swal from "sweetalert2";
 import { GoEye } from "react-icons/go";
 import { GoEyeClosed } from "react-icons/go";
 
-
 function Register() {
 	const navigate = useNavigate();
 
@@ -62,14 +61,17 @@ function Register() {
 					.then((response) => {
 						const obj = response.data.userDetails;
 						if (obj.status == 1) {
-							toast.success("Register Successfully", {
-								autoClose: 500,
-							});
+							toast.success("Register Successfully", { autoClose: 500 });
 							localStorage.setItem("token", response.data.token);
 							localStorage.setItem("user_token", obj.user_token);
 							localStorage.setItem("_id", obj._id);
 							localStorage.setItem("status", obj.status);
 							localStorage.setItem("role", obj.role);
+						}
+						if (obj.status == 1 && obj.role === "user") {
+							navigate("/home");
+						} else {
+							navigate("/");
 						}
 					}).catch((error) => {
 						Swal.fire({

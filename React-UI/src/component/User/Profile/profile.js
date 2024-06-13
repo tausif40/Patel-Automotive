@@ -7,6 +7,7 @@ import { userUrl } from "../../../app.url";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import NavBar from '../Navbar/navbar';
 
 function Profile() {
 	const navigate = useNavigate();
@@ -17,7 +18,8 @@ function Profile() {
 	useEffect(() => {
 		if (user_token && user_token !== "null") {
 			axios.get(userUrl + "fetch?user_token=" + user_token)
-				.then((response) => { setUserData(response.data) 
+				.then((response) => {
+					setUserData(response.data[ 0 ])
 				}).catch((error) => { console.log(error) });
 		}
 	}, []);
@@ -67,33 +69,32 @@ function Profile() {
 								<button className="edit-btn flex "> <CiEdit size={25} /> <span>&nbsp;Edit</span></button>
 							</Link>
 						</div>
-						{
-							userData.map((data) => (
-								<div className="profile-details w-[40%]">
-									<div className="flex">
-										<p className="w-1/2 font-semibold">Name</p>
-										<p>{data.name}</p>
-									</div>
-									<div className="flex">
-										<p className="w-1/2 font-semibold">Email</p>
-										<p>{data.email}</p>
-									</div>
-									<div className="flex">
-										<p className="w-1/2 font-semibold">Mobile No. </p>
-										<p>{data.phone}</p>
-									</div>
-									<div className="flex">
-										<p className="w-1/2 font-semibold">Password </p>
-										<p className="w-1/2 flex justify-between">
-											<span>{password}</span> <span className='showPassword' onClick={showPassword}>Show</span>
-										</p>
-									</div>
-									<div className="flex justify-center mt-10">
-										<button className="profileLogOut-btn" onClick={LogOutHandel}>Log Out</button>
-									</div>
-								</div>
-							))
-						}
+
+						<div className="profile-details w-[40%]">
+							<div className="flex">
+								<p className="w-1/2 font-semibold">Name</p>
+								<p>{userData.name}</p>
+							</div>
+							<div className="flex">
+								<p className="w-1/2 font-semibold">Email</p>
+								<p>{userData.email}</p>
+							</div>
+							<div className="flex">
+								<p className="w-1/2 font-semibold">Mobile No. </p>
+								<p>{userData.phone}</p>
+							</div>
+							<div className="flex">
+								<p className="w-1/2 font-semibold">Password </p>
+								<p className="w-1/2 flex justify-between">
+									<span>{password}</span> <span className='showPassword' onClick={showPassword}>Show</span>
+								</p>
+							</div>
+							<div className="flex justify-center mt-10">
+								<button className="profileLogOut-btn" onClick={LogOutHandel}>Log Out</button>
+							</div>
+						</div>
+
+
 					</div>
 				</div >
 			</div >

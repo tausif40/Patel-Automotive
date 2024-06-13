@@ -8,6 +8,9 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			screens: {
+				'tablet': "990px",
+			},
 			colors: {
 				themeColor: "#274d5a",
 				themeDark: "#18353e",

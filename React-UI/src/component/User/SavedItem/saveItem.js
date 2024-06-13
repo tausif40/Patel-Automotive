@@ -18,7 +18,6 @@ function SavedItem() {
 	const [ noProduct, setNoProduct ] = useState(false);
 	const [ isLoading, setIsLoading ] = useState(false);
 	const [ popup, setPopup ] = useState(false);
-	const [ wishlist, setWishlist ] = useState([]);
 	const [ nameError, setNameError ] = useState('');
 	const [ phoneError, setPhoneError ] = useState('');
 
@@ -79,7 +78,7 @@ function SavedItem() {
 					setIsLoading(false);
 					setNoProduct(true);
 				} else {
-					setWishlist(response.data)
+					console.log(response.data);
 					response.data.forEach(item => {
 						productId.push(item.productId);
 					})

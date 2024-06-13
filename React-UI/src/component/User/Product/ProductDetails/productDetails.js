@@ -129,13 +129,12 @@ function ProductDetails() {
 	}
 
 	const addToWishlist = (id) => {
-		const toastId = toast.loading("Saving Product...")
+
 		const token = localStorage.getItem("user_token")
 		if (token === null || token === '') {
 			navigate('/login')
-			toast.update(toastId, { isLoading: false, autoClose: 1, type:"warning" });
-
 		} else {
+			const toastId = toast.loading("Saving Product...")
 			const WishlistItem = { productId: id, user_token: token }
 			axios.post(wishlistUrl + "save", WishlistItem).then((res) => {
 				toast.update(toastId, { render: "Saved Successfully", type: "success", isLoading: false, autoClose: 600 });

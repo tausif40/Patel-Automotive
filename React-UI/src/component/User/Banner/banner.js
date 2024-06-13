@@ -6,7 +6,7 @@ function Banner() {
 	const navigate = useNavigate()
 	return (
 		<>
-			<section className="banner-section flex items-center justify-center h-[98vh] pt-2" id='home'>
+			<section className="banner-section flex items-center justify-center pt-2" id='home'>
 				<div className='banner container flex pt-10'>
 					<div>
 						<div className='banner-img'>
